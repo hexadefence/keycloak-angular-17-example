@@ -1,5 +1,7 @@
 # Keycloak Angular Example
 
+![Screenshot 2024-06-26 at 00.38.58](https://i.imgur.com/xbuilhw.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
 ## Development server

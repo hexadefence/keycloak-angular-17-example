@@ -10,6 +10,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ![Screenshot 2024-06-26 at 00.21.42](https://i.imgur.com/Bnl3Jl1.png)
 
+![Screenshot 2024-06-26 at 00.32.34](https://i.imgur.com/F0rpnEq.png)
+
+##### Disable unnecessary redirect URIs and web origins when running on production mode.
+
 * client id : angular-client
 * valid redirect url: http://localhost:4200/*
 * web origins:  http://localhost:4200

@@ -29,7 +29,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 * Authentication flow: Standard Flow (Authorization code grant type)
 
 
-###### Proof key for code exchange (PKCE) method can be enabled if you prefer
+###### By Default SHA256 based Proof key for code exchange (PKCE) method is enabled
 
 ## Functions of the App
 ##### Authenticated

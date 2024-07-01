@@ -63,13 +63,13 @@
 
   <mat-grid-list cols="10" rowHeight="30px" gutterSize="5px"></mat-grid-list>
 
-  <mat-grid-list cols="10" rowHeight="400px" gutterSize="5px">
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
+  <mat-grid-list cols="10" rowHeight="200px" gutterSize="5px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="6" [rowspan]="1" [style.background]="'#9ed0eb'">
+    <mat-grid-tile [colspan]="7" [rowspan]="1" >
 
-      <mat-card style="width: 800px; height: 350px;">
+      <mat-card style="width: 950px; height: 190px; background-color: antiquewhite;">
         <mat-card-content>
           <p>
             {{statusPanel}}
@@ -80,4 +80,19 @@
   </mat-grid-list>
 </div>
 
-<router-outlet />
+<div style=" padding: 20px;">
+<mat-grid-list cols="10" rowHeight="70px" gutterSize="5px">
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#45dc45'">
+
+    <button mat-button color="green" routerLink="/public">Public Route</button>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#dd4f4f'">
+
+    <button mat-button routerLink="/private">Private Route</button>
+  </mat-grid-tile>
+</mat-grid-list>
+<router-outlet></router-outlet>
+</div>
+

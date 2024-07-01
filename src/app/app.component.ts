@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { KeycloakAngularModule, KeycloakService, KeycloakEventType } from 'keycloak-angular';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ClipboardModule, Clipboard } from '@angular/cdk/clipboard';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,8 @@ import { HttpClient } from '@angular/common/http';
     MatListModule,
     MatCardModule,
     ClipboardModule,
-    HttpClientModule],
+    HttpClientModule,
+    RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -34,6 +36,14 @@ export class AppComponent {
     this.keycloakService = keycloakService;
     this.clipboard = clipboard;
     this.httpClient = httpClient;
+
+    keycloakService.keycloakEvents$.subscribe({
+      next(event) {
+        if (event.type == KeycloakEventType.OnTokenExpired) {
+          keycloakService.updateToken(20);
+        }
+      }
+    });
   }
 
   public login(): void {
@@ -100,11 +110,7 @@ export class AppComponent {
 
   public async sendHttpRequest() {
 
-    // accesToken is undefined if user is not logged in
-    let accessToken = await this.keycloakService.getToken();
-
-    this.httpClient.get('https://ab81a40b274c481694de52422e7c28c3.api.mockbin.io/',
-      { headers: { 'Authorization': `Bearer ${accessToken ?? 'unauthenticated'}` } })
+    this.httpClient.get('https://ab81a40b274c481694de52422e7c28c3.api.mockbin.io/')
       .subscribe(res => {
         console.log(res)
       })

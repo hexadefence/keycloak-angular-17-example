@@ -1,6 +1,6 @@
 # Keycloak Angular Example
 
-![Screenshot 2024-06-26 at 00.38.58](https://i.imgur.com/xbuilhw.png)
+![main-screen](./doc_resource/main-screen.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
@@ -17,11 +17,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Keycloak Client Info
 
-![Screenshot 2024-06-26 at 00.21.42](https://i.imgur.com/Bnl3Jl1.png)
+![client image 1](./doc_resource/client-img-1.png)
 
-![Screenshot 2024-06-26 at 00.32.34](https://i.imgur.com/F0rpnEq.png)
+![client image 2](./doc_resource/client-img-2.png)
 
-##### Disable unnecessary redirect URIs and web origins when running on production mode.
+##### Disable unnecessary redirect URIs and web origins (if exist) when running on production mode.
 
 * client id : angular-client
 * valid redirect url: http://localhost:4200/*
@@ -31,7 +31,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ###### By Default SHA256 based Proof key for code exchange (PKCE) method is enabled
 
-## Functions of the App
+## Functions (Buttons) of the App
 ##### Authenticated
 
 Check whether the user is already logged into the system. Boolean value is passed to the screen based on that

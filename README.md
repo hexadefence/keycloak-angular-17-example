@@ -34,11 +34,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Functions (Buttons) of the App
 ##### Authenticated
 
-Check whether the user is already logged into the system. Boolean value is passed to the screen based on that
+Check whether the user is already logged into the system. Indicated as true or false
 
 ##### Login
 
-Initiate the login process. (Yousers will be redirected to the Keycloak loging page)
+Initiate the login process. (User will be redirected to the Keycloak loging page)
 
 ##### Copy Access Token
 
@@ -50,13 +50,13 @@ Show the parsed access token in the status panel
 
 ##### Token expired in 10 seconds
 
-Check whether the token is going to expire within 10 seconds. Using the keycloakService provided function
+Check whether the token is going to expire within 10 seconds. Using the keycloak angular sdk provided function
 
-this.keycloakService.isTokenExpired(n) - n seconds. if the token is going to expire within n seconds, this will return true
+**this.keycloakService.isTokenExpired(n)** if the token is going to expire within n seconds, this will return true
 
 ##### Update token (if gonna expire)
 
-This function is also working in a similar way to isTokenExpired method. This function will update the token if it is going to expire within the given number of seconds.
+This function is also working in a similar way to **isTokenExpired** method. This function will update the token if it is going to expire within the given number of seconds.
 
 ##### Send HTTP Request
 
@@ -68,6 +68,21 @@ Logout the user from the system.
 
 ##### Show Assigned Roles
 
-Show all the assigned roles to the user including both realm roles and client roles.
+Show all the assigned roles to the user including both **realm roles** and **client roles**.
 
-Similarly you can use the function this.keycloakService.isUserInRole('role name') to directly check whetehr a particular user has a specific role assigned.
+Similarly you can use the function **this.keycloakService.isUserInRole('role name')** to directly check whetehr a particular user has a specific role assigned.
+
+**Important !!!**
+When using single page apps (client-side applications), the client has to be a **public client** as there is no secure way to store client credentials in a client-side application. This consideration makes it very important to make sure the redirect URIs you have configured for the client are correct and as specific as possible.
+
+You also need to configure Valid Redirect URIs and Web Origins. Be as specific as possible as failing to do so may result in a security vulnerability.
+
+
+
+**References**
+
+* Keycloak Javascript Adapter options are available here (API reference)
+https://www.keycloak.org/docs/latest/securing_apps/index.html#api-reference
+
+* Keycloak Angular SDK available here
+https://www.npmjs.com/package/keycloak-angular

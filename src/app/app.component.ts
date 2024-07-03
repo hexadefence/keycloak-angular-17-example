@@ -77,6 +77,9 @@ export class AppComponent {
     this.keycloakService.getToken().then(token => {
       this.statusPanel = this.toJWTString(token);
 
+      // alternatively below funciton call can be used to get the parsed token
+      // this.keycloakService.getKeycloakInstance().tokenParsed
+
     })
       .catch(e => { this.statusPanel = 'Error occurred while parsing. check console logs'; console.error(e) });
   }

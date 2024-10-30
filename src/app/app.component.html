@@ -3,51 +3,57 @@
 <div style=" padding: 20px; background-color: rgb(216, 251, 251);">
   <mat-grid-list cols="10" rowHeight="70px" gutterSize="5px">
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#2b98d4'">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#2b98d4'">
 
       <button mat-button color="green" (click)="isLoggedIn()">Authenticated ?</button>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#2fd07e'">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#2fd07e'">
 
       <button mat-button (click)="login()">Login</button>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'rgb(207 183 45)'">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'rgb(207 183 45)'">
 
       <button mat-button (click)="copyAccessTokenToClipboard()">Copy Access Token</button>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'rgb(222, 117, 117)'">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'rgb(222, 117, 117)'">
 
       <button mat-button (click)="parseAccessToken()">Parse Access token</button>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#2fd07e'">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#2fd07e'">
 
       <button mat-button (click)="isTokenExpired()">Token Expired in 10 sec ?</button>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'rgb(47, 200, 208)'">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'rgb(47, 200, 208)'">
 
       <button mat-button (click)="updateToken()">Update Token (if going to expire in 5 sec)</button>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'rgb(220, 160, 83)'">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'rgb(220, 160, 83)'">
 
       <button mat-button (click)="sendHttpRequest()">Send HTTP Request</button>
     </mat-grid-tile>
 
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'rgb(176, 194, 185)'">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'rgb(176, 194, 185)'">
 
       <button mat-button (click)="logout()">Logout</button>
     </mat-grid-tile>
 
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'rgb(207 183 45)'">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'rgb(207 183 45)'">
 
       <button mat-button (click)="showRoles()">Show Assigned Roles</button>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'rgb(208 207 202)'">
+
+      <button mat-button (click)="resetPanel()">Clear Panel</button>
 
     </mat-grid-tile>
 
@@ -86,17 +92,17 @@
 </div>
 
 <div style=" padding: 20px;">
-  <h1> Secured Routing : </h1>
+  <h1 style="background-color: #ffed62; padding: 10px;"> Router Section : </h1>
   <mat-grid-list cols="10" rowHeight="70px" gutterSize="5px">
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'#45dc45'">
+    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'rgb(194 227 194)'">
 
-      <button mat-button color="green" routerLink="/public">Public Route</button>
+      <button mat-button color="green" routerLink="/public">/public-route</button>
     </mat-grid-tile>
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'rgb(198 84 114)'">
+    <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'rgb(233 165 183)'">
 
-      <button mat-button routerLink="/private">Private Route</button>
+      <button mat-button routerLink="/private">/private-route</button>
     </mat-grid-tile>
   </mat-grid-list>
   <router-outlet></router-outlet>

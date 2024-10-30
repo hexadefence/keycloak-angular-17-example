@@ -136,6 +136,10 @@ export class AppComponent {
      * https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter
     **/
 
+    public resetPanel() {
+      this.statusPanel = '';
+    }
+
 
   private toJWTString(token: string) {
     const base64Url = token.split('.')[1];
